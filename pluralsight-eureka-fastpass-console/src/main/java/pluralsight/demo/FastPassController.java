@@ -27,6 +27,8 @@ public class FastPassController {
 
 	@Autowired
 	private RestTemplate restTemplate;
+	
+	
 
 	@HystrixCommand(fallbackMethod = "getFastPassCustomerDetailsBackup")
 	@RequestMapping(path = "/customerdetails", params = { "fastpassid" })
@@ -50,8 +52,6 @@ public class FastPassController {
 
 
 	
-
-
 
 
 }

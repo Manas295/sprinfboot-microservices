@@ -9,7 +9,17 @@ import org.springframework.web.bind.annotation.RestController;
 public class MessageChannelController {
 	@Autowired private TollPubService tollservice;
 
+	@Autowired 
+	private TollPublisher publisher;
+
 	@PostMapping(path="/publish") public void publishMessage(@RequestBody Toll toll) {
 
-		 tollservice.sendMessage(toll); }
+		tollservice.sendMessage(toll); }
+	
+	
+	@PostMapping(path = "/publishMessage")
+	public void sendMessage() {
+		publisher.sendTollCharge();
+	}
+
 }

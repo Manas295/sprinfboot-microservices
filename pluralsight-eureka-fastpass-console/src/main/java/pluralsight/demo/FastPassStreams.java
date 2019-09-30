@@ -13,4 +13,9 @@ public interface FastPassStreams {
     SubscribableChannel inboundGreetings();
     @Output(OUTPUT)
     MessageChannel outboundGreetings();
+    
+    @Output("output")
+    MessageChannel outbound();
+    
+    
 }
